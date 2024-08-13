@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha uma Opção</title>
+    <style>
+        .hidden { display: none; }
+        .message { font-size: 24px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Escolha uma opção:</h1>
+    <button onclick="showResult('present')">Escolher Presente Misterioso</button>
+    <button onclick="showResult('money')">Escolher R$ 2</button>
+
+    <div id="result" class="message hidden"></div>
+
+    <script>
+        function showResult(choice) {
+            const resultElement = document.getElementById('result');
+
+            if (choice === 'present') {
+                resultElement.textContent = '🎆🎉 PARABÉNS! 🎉🎆';
+            } else if (choice === 'money') {
+                resultElement.textContent = '😠 Pobre! 😠';
+            }
+
+            resultElement.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
